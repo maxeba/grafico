@@ -25,4 +25,16 @@ Plotly.newPlot(grafico, data, layout)
 const layout = {
     plot_bgcolor: getCSS('--bg-color')
     paper_bgcolor: getCSS('--bg-color')
+    const getCSS = (variavel) => {
+      return getComputedStyle(document.body).getPropertyValue(variavel)
+    }
+    
+    const tickConfig = {
+      color: getCSS('--primary-color'),
+      size: 16,
+      family: getCSS('--font')
+    }
+    
+    export { getCSS, tickConfig }
+    
 }
